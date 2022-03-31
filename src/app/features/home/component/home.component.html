@@ -1,0 +1,18 @@
+<div class="background">
+  <mat-grid-list [cols]="breakpoint" rowHeight="4:2" (window:resize)="onResize($event)">
+    <mat-grid-tile
+        style="display:flex"
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+        <div class="example-button-row" style="display:flex; justify-content: center; align-items: center;">
+          <a mat-raised-button color="accent" 
+          style="width: 90%; height: 90%; display:flex; justify-content: center; align-items: center;"
+          (click)="navigateBy(tile.link)">
+          <mat-icon style="font-size: 50px;">{{tile.text}}</mat-icon>
+          </a>
+        </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

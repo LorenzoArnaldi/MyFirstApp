@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>{{data.title}}</mat-card-title>
+      <mat-card-subtitle>{{data.author}}</mat-card-subtitle>
+      <img mat-card-sm-image src={{data.image_url}} >
+    </mat-card-title-group>
+    <mat-card-content>
+      {{data.description}}
+      <div class="bottone">
+        <mma-button [dataB]="dataB" (click)="openEditDialog()"></mma-button> <br>
+        <mma-button [dataB]="dataB2" (click)="delete()" ></mma-button>
+      </div>
+    </mat-card-content>
+  </mat-card>

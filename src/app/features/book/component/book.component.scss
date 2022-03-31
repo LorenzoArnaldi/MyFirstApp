@@ -1,0 +1,73 @@
+:host{
+
+    display: block;
+    height: 100%;
+    width: 100%;
+    min-height:100%;
+}
+
+
+.background {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: calc(100% - 56px) 56px;
+    grid-template-areas: "_content" "_paginator";
+    background-color: #212121;
+    height: 100%;
+    width: 100%;
+
+    .content {
+        grid-area: _content;
+        margin-bottom: 20px;
+    }
+
+    .styleTools {
+        position: relative;
+        grid-area: _paginator;
+        .styleButtonAdd {
+            position: absolute;
+            top: calc(-100% - 16px);
+            right: 16px;
+        }
+    }
+    
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: auto;
+}
+
+.single-card {
+    width: 450px;
+    max-width: 100%;
+}
+
+.titolo {
+    text-align: center;
+    color: white;
+    font-size: 21px;
+}
+
+.styleButtonAdd {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+.styleTools {
+    grid-area: _paginator;
+    height: 100%;
+    flex:1;
+    align-items: flex-end;
+}
+
+.stylePaginator {
+    align-items: flex-end;
+}

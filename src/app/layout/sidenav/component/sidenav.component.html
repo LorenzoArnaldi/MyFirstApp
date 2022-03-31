@@ -1,0 +1,63 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <!--Bottone della sidenav-->
+    <button class="d-block d-sm-none" mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <!--Separatore-->
+    <!-- <span class="example-spacer"></span> -->
+    <a (click)="navigateBy('home')"><img class="d-block d-sm-none" src="https://i.postimg.cc/YSPwZkCR/Logo-Prova2.png" alt="MyMediaApp"></a>
+    <!-- <h1 class="example-app-name d-block d-sm-none">MyMediaApp</h1>   -->
+    <!--Bottoni centrali delle varie sezioni-->  
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <button (click)="navigateBy('film')" class="d-none d-sm-block bottone" mat-icon-button color="accent" aria-label="Sezione film">
+            <mat-icon>theaters</mat-icon>
+          </button>
+          <button (click)="navigateBy('music')" class="d-none d-sm-block bottone" mat-icon-button color="accent" aria-label="Sezione musica">
+            <mat-icon>audiotrack</mat-icon>
+          </button>
+          <!-- <h1 class="example-app-name d-none d-sm-block">MyMediaApp</h1> -->
+          <a (click)="navigateBy('home')"><img class="d-none d-sm-block" src="https://i.postimg.cc/YSPwZkCR/Logo-Prova2.png" alt="MyMediaApp"></a>
+          <button (click)="navigateBy('tv')" class="d-none d-sm-block bottone" mat-icon-button color="accent" aria-label="Sezione serie tv">
+            <mat-icon>live_tv</mat-icon>
+          </button>
+          <button (click)="navigateBy('book')" class="d-none d-sm-block bottone" mat-icon-button color="accent" aria-label="Sezione libri">
+            <mat-icon>auto_stories</mat-icon>
+          </button>
+        </div>
+      </div>
+    <!--Separatore-->
+      <!-- <span class="example-spacer"></span> -->
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav role="navigation" 
+                 [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+       <!--<a mat-list-item routerLink="/###" (click)="onSidenavClose()">
+           <mat-icon>###</mat-icon><span class="nav-caption">###</span>
+       </a>-->
+       <a mat-list-item (click)="navigateBy('film')">
+         <mat-icon>theaters</mat-icon><span class="nav-caption">Film</span>
+       </a>
+       <a mat-list-item (click)="navigateBy('music')">
+         <mat-icon>audiotrack</mat-icon><span class="nav-caption">Musica</span>
+       </a>
+       <a mat-list-item (click)="navigateBy('tv')">
+         <mat-icon>live_tv</mat-icon><span class="nav-caption">Serie Tv</span>
+       </a>
+       <a mat-list-item (click)="navigateBy('book')">
+         <mat-icon>auto_stories</mat-icon><span class="nav-caption">Libri</span>
+       </a>
+     </mat-nav-list>
+    </mat-sidenav>
+      
+    
+
+    <mat-sidenav-content> 
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+  

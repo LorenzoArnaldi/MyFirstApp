@@ -1,0 +1,9 @@
+<div class="background">
+    <div class="titolo"><h1>Lista Film</h1></div>
+        <div class="list card-conteiner">
+            <div class="single-card" *ngFor="let elem of data">
+                <mma-card [data]="elem"></mma-card>
+            </div>
+        </div>
+    <mma-paginator></mma-paginator>
+</div>

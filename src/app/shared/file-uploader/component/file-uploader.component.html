@@ -1,0 +1,9 @@
+    <input hidden
+        type="file" [formControl]="formControl" #fileUpload id="fileUpload" name="fileUpload" accept="image/*" 
+        (change)="onFileSelected($event)"/>
+    <button mat-raised-button
+        color="primary"
+        (click)="fileUpload.click()">
+        LOAD
+        </button>
+    <img *ngIf="imageSelected" src="{{imageSelected}}" alt="">

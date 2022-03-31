@@ -1,0 +1,67 @@
+<h2 mat-dialog-title>Scheda Libro</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="bookForm">
+    <small class="m2b-input__text--error" 
+      *ngIf="checkFormError('title', 'required')">
+      This field is required
+    </small>
+    <mat-form-field appearance="fill">
+      <mat-label>Titolo Libro</mat-label>
+      <input matInput formControlName="title" name="title">
+    </mat-form-field>
+
+    <small class="m2b-input__text--error" 
+      *ngIf="checkFormError('year', 'required')">
+      This field is required
+    </small>
+    <mat-form-field appearance="fill">
+      <mat-label>Anno di pibblicazione</mat-label>
+      <input matInput formControlName="year" name="year">
+    </mat-form-field>
+
+    <small class="m2b-input__text--error" 
+      *ngIf="checkFormError('author', 'required')">
+      This field is required
+    </small>
+    <mat-form-field appearance="fill">
+      <mat-label>Autore</mat-label>
+      <input matInput formControlName="author" name="author">
+    </mat-form-field>
+
+    <!-- <input hidden
+    type="file" formControlName="file" #fileUpload id="fileUpload" name="fileUpload" accept="image/*"/>
+    <button
+      [buttonType]="'normal-raised'"
+      [buttonStyle]="'primary'"
+      [buttonLabel]="'Choose'"
+      [buttonMatIcon]="'file_upload'"
+    </button>
+    > -->
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Sinossi</mat-label>
+      <textarea matInput formControlName="description" name="description"></textarea>
+    </mat-form-field>
+    
+    <mma-file-uploader [formControl]="bookForm.get('file')" [fileType]="'image'"></mma-file-uploader>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close (click)="onNoClick()">Chiudi</button>
+  <button
+    *ngIf="data.mode == 'edit'"
+    mat-button [mat-dialog-close]="true" 
+    cdkFocusInitial [disabled]='!bookForm.valid' 
+    type="submit" (click)="stampa()">
+    Edit
+  </button>
+  <button 
+    *ngIf="data.mode == 'insert'"
+    mat-button [mat-dialog-close]="true" 
+    cdkFocusInitial [disabled]='!bookForm.valid' 
+    type="submit" (click)="stampa()">
+    Inserisci
+  </button>
+</mat-dialog-actions>

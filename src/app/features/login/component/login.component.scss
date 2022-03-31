@@ -1,0 +1,17 @@
+:host {
+  .login-page-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .login-form__header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-form__footer-container {
+    display: flex;
+    justify-content: center;
+  }
+}

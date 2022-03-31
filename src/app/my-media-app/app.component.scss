@@ -1,0 +1,21 @@
+
+:host {
+    
+    footer {
+        height: auto;
+        min-height: 15%;
+        background-color: #212121;
+    }
+    
+    main {
+        display: block;
+        --height:calc(100% - 135.75px);
+        // height: var(--height);
+        height: auto;
+        min-height: var(--height);
+        width: 100%;
+        padding-inline: 5%;
+        background-color: #212121;
+    }
+
+}

@@ -1,0 +1,90 @@
+<h2 mat-dialog-title>Scheda Film</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="filmForm">
+    <small class="m2b-input__text--error" 
+      *ngIf="checkFormError('nameFilm', 'required')">
+      This field is required
+    </small>
+    <mat-form-field appearance="fill">
+      <mat-label>Titolo Film</mat-label>
+      <input matInput [formControl]="filmForm.get('nameFilm')">
+    </mat-form-field>
+    <small class="m2b-input__text--error" 
+      *ngIf="checkFormError('dateProduction', 'required')">
+      This field is required
+    </small>
+    <mat-form-field appearance="fill">
+      <mat-label>Anno di produzione</mat-label>
+      <input matInput formControlName="dateProduction" name="dateProduction">
+    </mat-form-field>
+    <small class="m2b-input__text--error" 
+      *ngIf="checkFormError('nameAutor', 'required')">
+      This field is required
+    </small>
+    <mat-form-field appearance="fill">
+      <mat-label>Regista</mat-label>
+      <input matInput formControlName="nameAutor" name="nameAutor">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Sinossi</mat-label>
+      <textarea matInput formControlName="groupFilm" name="groupFilm"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Chiudi</button>
+  <button
+    *ngIf="data.mode == 'edit'"
+    mat-button [mat-dialog-close]="true" 
+    cdkFocusInitial [disabled]='!filmForm.valid' 
+    type="submit" (click)="stampa()">
+    Edit
+  </button>
+  <button 
+    *ngIf="data.mode == 'insert'"
+    mat-button [mat-dialog-close]="true" 
+    cdkFocusInitial [disabled]='!filmForm.valid' 
+    type="submit" (click)="stampa()">
+    Inserisci
+  </button>
+</mat-dialog-actions>
+
+  <!-- JEASON DELLA CHIAMATA
+     {
+    "user_id": "\u0027\u0027",
+    "movie_id": "\u0027\u0027",
+    "collection_id": "\u0027\u0027",
+    "file": {
+      "name": "",
+      "data": ""
+    },
+    "author": {
+      "name": "",
+      "group": ""
+    },
+    "timestamp": null,
+    "year": ""
+  } -->
+
+<!--Il FormGroup dovrebbe essere scritto con la sintassi [FormGroup]-->
+  <!-- FILM
+  <form class="example-form" [FormGroup]="filmForm"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name movie</mat-label>
+      <input matInput placeholder="Inserire nome film" value="Sushi" formControlName="nameFilm">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Date production</mat-label>
+      <input matInput placeholder="inserire anno produzione" value="Sushi" formControlName="dateProduction"]>
+    </mat-form-field>
+  AUTORE
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Inserire nome autore" value="Sushi" formControlName="nameAutor">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput placeholder="Inserire cognome autore" value="Sushi"  formControlName="surnameAutor">
+    </mat-form-field>
+  </form> -->

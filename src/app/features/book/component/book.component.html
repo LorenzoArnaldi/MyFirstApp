@@ -1,0 +1,27 @@
+<div class="background">
+    <div class="content">
+    <div class="titolo">
+        Book Section
+    </div>
+    <div class="list">
+        <div class="single-card" *ngFor="let elem of listItems">
+            <mma-card [data]="elem" 
+            [dialogComponentType]="dialogComponentType" 
+            (dataEmitter)="updateBook($event)" 
+            (deleteEmitter)="deleteBook($event)">
+            </mma-card>
+        </div>
+    </div>
+    </div>
+    
+    <div class="styleTools">
+        <div class="styleButtonAdd">
+            <button mat-fab color="accent" (click)="openAddDialog()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+        <div class="stylePaginator">
+            <mma-paginator></mma-paginator>
+        </div>
+    </div>
+</div>

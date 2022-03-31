@@ -1,0 +1,12 @@
+<div class="background">
+    <div class="titolo">Movie Section</div>
+        <div class="list card-conteiner">
+            <div class="single-card" *ngFor="let elem of data">
+                <mma-card [data]="elem" [dialogComponentType]="dialogComponentType"></mma-card>
+            </div>
+        </div>
+        <button mat-fab color="accent" (click)="openAddDialog()">
+            <mat-icon>add</mat-icon>
+        </button>
+    <mma-paginator></mma-paginator>
+</div>
