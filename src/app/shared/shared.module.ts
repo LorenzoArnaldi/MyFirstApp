@@ -5,9 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardModule } from './card/card.module';
 import { PaginatorModule } from './paginator/paginator.module';
 import { ButtonModule } from './button/button.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { FileUploaderModule } from './file-uploader/file-uploader.module';
+import { TailwindCardModule } from './tailwind-card/tailwind-card.module';
 
 
 const sharedComponents = [
@@ -21,7 +20,8 @@ const sharedModules = [
   ReactiveFormsModule,
   PaginatorModule,
   ButtonModule,
-  FileUploaderModule
+  FileUploaderModule,
+  TailwindCardModule
 ];
 
 

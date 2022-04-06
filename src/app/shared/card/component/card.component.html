@@ -1,14 +1,66 @@
-<mat-card class="example-card">
+<!--style="display: flex; align-items: baseline; justify-content: space-between; width: 100%;" -->
+<!-- <mat-card class="example-card">
+  <div class="topElementsCard" >
+  <div class="bottone">
+    <button mat-mini-fab color="primary" 
+            aria-label="Dettail button"
+            (click)="openEditDialog()">
+      <mat-icon>list</mat-icon>
+    </button>
+    <button class="styleButtonDelete"
+            mat-mini-fab color="primary" 
+            aria-label="Dettail button"
+            (click)="delete()">
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+  </div>    -->
+  <!--   style="display: flex; justify-content: space-between; width: 100%;" -->
+    
+  
+  <!-- <div>
     <mat-card-title-group>
       <mat-card-title>{{data.title}}</mat-card-title>
       <mat-card-subtitle>{{data.author}}</mat-card-subtitle>
       <img mat-card-sm-image src={{data.image_url}} >
     </mat-card-title-group>
+  </div>
+  </div>
+    <div class="buttonCardContent">
+      <mat-card-content>
+        {{data.description}}
+      </mat-card-content>
+    </div>
+  </mat-card> -->
+
+
+<!--NUOVA CARD-->
+
+<mat-card class="styleCard">
+  <div class="topCard">
+    <div class="bottoniCard">
+      <button mat-mini-fab color="primary" 
+              aria-label="Dettail button"
+              (click)="openEditDialog()">
+      <mat-icon>list</mat-icon>
+      </button>
+      <button class="styleButtonDelete"
+              mat-mini-fab color="primary" 
+              aria-label="Dettail button"
+              (click)="delete()">
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+    </div>
+    <div class="titoliCard">
+      <mat-card-title>{{data.title}}</mat-card-title>
+      <mat-card-subtitle>{{data.author}}</mat-card-subtitle>
+    </div>
+    <div class="immagineCard">
+      <img mat-card-sm-image src={{data.image_url}} >
+    </div>
+  </div>
+  <div class="belowCard">
     <mat-card-content>
       {{data.description}}
-      <div class="bottone">
-        <mma-button [dataB]="dataB" (click)="openEditDialog()"></mma-button> <br>
-        <mma-button [dataB]="dataB2" (click)="delete()" ></mma-button>
-      </div>
     </mat-card-content>
-  </mat-card>
+  </div>
+</mat-card>

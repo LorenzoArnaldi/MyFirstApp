@@ -65,7 +65,7 @@ export class BookComponent implements OnInit {
   openAddDialog() {
     const matDialogConfig = new MatDialogConfig();
     const filmData: BookDialogData = {mode:"insert", filmData: null}
-    matDialogConfig.width = '50%';
+    matDialogConfig.width = '25%';
     matDialogConfig.data = filmData;
     const dialogRef = this.dialog.open(this.dialogComponentType, matDialogConfig);
 
@@ -85,6 +85,7 @@ export class BookComponent implements OnInit {
         .subscribe(
           res => console.log('INSERT NEW BOOK RESPONSE', res)
         )
+        this.getBookList();
     });
   }
 

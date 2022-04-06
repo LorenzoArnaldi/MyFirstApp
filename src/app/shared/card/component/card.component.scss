@@ -1,20 +1,67 @@
-.example-card {
-  max-width: 100%;
-}
+// .example-card {
+//   max-width: 100%;
+// }
 
-.mma-button {
-  align-items: flex-end;
-}
+// .mma-button {
+//   align-items: flex-end;
+// }
 
-.mat-card-content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-  width: 100%;
-}
+// mat-card-content {
+  // display: flex;
+  // justify-content: space-between;
+  // margin-top: 15px;
+  // width: 100%;
+//   .topElementsCard {
+//     display: flex; 
+//     justify-content: space-between;
+//     // align-items: baseline; 
+//     justify-items:baseline; 
+//     width: 100%;
+//     .bottone {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       min-width: 15%;
+//       // margin-top: 10px;
+// .styleButtonDelete {
+//   margin-top: 5px;
+// }
+//     }
+   
+//   }
+//   .buttonCardContent {
+//   display: flex;
+//   justify-content: space-between;
+// }
+// }
 
-.bottone {
+.styleCard {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  max-width: 400px;
+  height: 100%;
 }
+.topCard {
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+  .bottoniCard {
+    display: flex;
+    flex-direction: column;
+  }
+  .titoliCard {
+    display:flex;
+    flex-direction: column;
+  }
+  .immaginiCard {
+    display: flex;
+  }
+}
+
+.belowCard {
+  display: flex;
+}
+
+
+
+

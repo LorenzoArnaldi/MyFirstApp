@@ -1,7 +1,8 @@
-<h2 mat-dialog-title>Scheda Libro</h2>
+<h2 mat-dialog-title style="text-align: center;">Scheda Libro</h2>
 <mat-dialog-content class="mat-typography">
   <form [formGroup]="bookForm">
-    <small class="m2b-input__text--error" 
+    <!-- da fixare classe small -->
+    <small 
       *ngIf="checkFormError('title', 'required')">
       This field is required
     </small>
@@ -10,7 +11,7 @@
       <input matInput formControlName="title" name="title">
     </mat-form-field>
 
-    <small class="m2b-input__text--error" 
+    <small 
       *ngIf="checkFormError('year', 'required')">
       This field is required
     </small>
@@ -19,7 +20,7 @@
       <input matInput formControlName="year" name="year">
     </mat-form-field>
 
-    <small class="m2b-input__text--error" 
+    <small 
       *ngIf="checkFormError('author', 'required')">
       This field is required
     </small>

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './component/card.component';
 import {MatCardModule} from '@angular/material/card';
 import { ButtonModule } from '../button/button.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -12,6 +14,8 @@ import { ButtonModule } from '../button/button.module';
     CommonModule,
     MatCardModule,
     ButtonModule,
+    MatButtonModule,
+    MatIconModule
   ],
   exports: [
     CardComponent

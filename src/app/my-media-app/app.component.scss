@@ -8,11 +8,12 @@
     }
     
     main {
-        display: block;
-        --height:calc(100% - 135.75px);
+        // display: block;
+        // --height:calc(100% - 135.75px);
         // height: var(--height);
         height: auto;
-        min-height: var(--height);
+        min-height: 85%;
+        // min-height: var(--height);
         width: 100%;
         padding-inline: 5%;
         background-color: #212121;
